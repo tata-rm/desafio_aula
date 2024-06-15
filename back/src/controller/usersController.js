@@ -11,17 +11,13 @@ async function storeUser(request, response) {
 
   connection.query(query, params, (err, results) => {
     if (results) {
-      response
-        .status(200)
-        .json({
+      response.status(200).json({
           success: true,
           message: "Cadastro realizado com sucesso!",
           data: results
         })
     } else {
-      response
-        .status(400)
-        .json({
+      response.status(400).json({
           success: false,
           message: "Cadastro não realizado com sucesso!",
           data: err
